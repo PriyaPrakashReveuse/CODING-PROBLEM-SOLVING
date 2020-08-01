@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int i , j, arr[100],d, n;
+ cin>>n; //total array input
+ cin>>d; //total rotations
+ for(i=0;i<n;i++)
+ {
+  cin>>arr[i];
+ }
+ for(i=0;i<n;i++)
+ {
+  cout<<arr[(i+d)%n];
+ }
+ return 0;
+
+}
