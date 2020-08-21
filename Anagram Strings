@@ -1,0 +1,31 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    string string1;string string2;
+    cin>>string1;
+    cin>>string2;
+    if(string1.length()!=string2.length())
+    {
+        cout<<"NO";
+    }
+    else
+    {
+        sort(string1.begin(),string1.end());
+        sort(string2.begin(),string2.end());
+        if(string1!=string2)
+        {
+            cout<<"NO";
+            break;
+        }
+        else
+        {
+            cout<<"YES";
+        }
+    }
+    return 0;
+}
