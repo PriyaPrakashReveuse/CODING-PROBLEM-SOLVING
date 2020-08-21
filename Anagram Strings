@@ -1,12 +1,10 @@
 #include <iostream>
 #include<string>
 #include<algorithm>
-
 using namespace std;
-
 int main()
 {
-    string string1;string string2;
+    string string1;string string2;int i;
     cin>>string1;
     cin>>string2;
     if(string1.length()!=string2.length())
@@ -17,14 +15,17 @@ int main()
     {
         sort(string1.begin(),string1.end());
         sort(string2.begin(),string2.end());
-        if(string1!=string2)
+        for(int i=0;i<string1.length();i++)
         {
+            if(string1[i]!=string2[i])
+            {
             cout<<"NO";
-            break;
-        }
+            }
+    
         else
         {
             cout<<"YES";
+        }
         }
     }
     return 0;
