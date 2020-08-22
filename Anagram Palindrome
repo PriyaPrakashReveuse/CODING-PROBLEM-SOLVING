@@ -1,0 +1,35 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    string str1;
+    cin>>str1;
+    sort(str1.begin().str1.end());
+    cout<<word<<endl;
+    int flag=2;
+    int n=str1.length();
+    for(i=0;i<n-1;i+=2)
+    {
+        if(str1[i]==str1[i+1])
+            {
+                continue;
+            }
+        else
+            {
+                flag=flag-1;
+                i=i-1;
+            }
+    }
+    if(flag==2||flag==1)
+    {
+        ccout<<"yes";
+    }
+    else
+    {
+        cout<<"no";
+    }
+   return 0; 
+}
