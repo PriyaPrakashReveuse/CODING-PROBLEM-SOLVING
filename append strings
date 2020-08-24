@@ -1,0 +1,19 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+
+    string string1;
+    string string2;
+    cin>>string1;
+    cin>>string2;
+    string1= string1+ " " + string2;
+    cout<<string1;
+    
+
+    return 0;
+}
