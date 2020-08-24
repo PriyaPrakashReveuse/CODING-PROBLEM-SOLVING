@@ -1,0 +1,16 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+
+    string string1;
+    cin>>string1;
+    sort(string1.begin(),string1.end());
+    cout<<string1;
+
+    return 0;
+}
