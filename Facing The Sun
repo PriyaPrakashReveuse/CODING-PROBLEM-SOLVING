@@ -16,11 +16,9 @@ int main()
         {
             continue;
         }
-        else
-        {
-            j=i+1;
-            count++;
-        }
+        j=i+1;
+        count++;
+            
     } 
     cout<<count;
     return 0;
