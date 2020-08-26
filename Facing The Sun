@@ -10,7 +10,7 @@ int main()
         cin>>arr[i];
     }
     int count=1,j=0;
-    for(i=0;i<n;i++)
+    for(i=0;i<n-1;i++)
     {
         if(arr[j]>arr[i+1])
         {
