@@ -1,38 +1,41 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int add(int n, int arr[],int i)
+int addNum(int n, int arr[], int i, int count)
 {
-    arr[i]=n;
-    
-    if(arr[i]==arr[0]&&i>0)
-	  {
-	      cout<<arr[i];
-	      return 0;
-	  }
-	  if(arr[i]>0&&shift=0)
-	  {
-	      cout<<arr[i]<<" ";
-	      add(arr[i]-5,arr,i+1);
-	  }
-	  else
-	  {
-	      shift=1;
-	      cout<<arr[i]<<" ";
-	      add(arr[i]+5,arr,i+1);
-	  }
+
+  arr[i] = n;
+  if(arr[i] == arr[0] && i > 0)
+  {
+    cout << arr[i];
+    return 0;
+  }
+
+   if(arr[i] > 0 && count == 0 )
+  {
+    cout << arr[i] << " ";
+    addNum(arr[i]-5, arr, i+1, count);
+
+  }
+  else{
+    count = 1;
+    cout << arr[i] << " ";
+    addNum(arr[i] + 5, arr, i+1, count);
+  }
 }
 
-int main() {
-	//code
-	int t,n,arr[100];
-	cin>>t;
-	while(t--)
-	{
-	  cin>>n;
-	  int i=0;
-	  int shift=1;
-	  add(n,arr,i);
-	}
-	return 0;
+
+
+int main()
+{
+  int t;
+  cin >> t;
+
+  while(t--)
+  {
+    int n;
+    cin >> n;
+    int arr[100],count = 0,i = 0;
+    addNum(n, arr, i, count);
+  }
 }
