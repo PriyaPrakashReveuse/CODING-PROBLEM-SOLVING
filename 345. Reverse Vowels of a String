@@ -1,0 +1,33 @@
+bool isVow(char s)
+    {
+        if(s=='a'||s=='e'||s=='i'||s=='o'||s=='u'||s=='A'||s=='E'||s=='I'||s=='O'||s=='U')
+            return true;
+        else
+            return false;
+        
+    }
+    
+    string reverseVowels(string s) 
+    {
+        int n=s.size();
+        int start=0,e=n;
+        
+        while(start<e)
+        {
+            if(isVow(s[start])&&isVow(s[e]))
+            {
+                swap(s[start],s[e]);
+                start++;
+                e--;
+            }    
+            
+            if(!isVow(s[start]))
+                start++;
+            
+            if(!isVow(s[e]))
+                e--;
+        }
+        
+        return s;
+        
+    }
