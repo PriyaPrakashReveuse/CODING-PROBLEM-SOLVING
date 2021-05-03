@@ -6,8 +6,10 @@ int maximum69Number (int num)
             if(s[i]=='6')
             {
                 s[i]='9';
+                //just chnage once & return the number
                 return stoi(s);
             }
         }
+        // if the number is already the greatest just return it without changing
         return stoi(s);
     }
