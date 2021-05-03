@@ -1,0 +1,42 @@
+string longestPalindrome(string s) 
+    {
+        if(s.size()==0)
+            return "";
+        
+        int n=s.size(),table[n][n];
+        for(int i=0;i<n;i++)
+            table[i][i]=0;
+        
+        int l=0,maxlength=1;//substrings of length 1 are palindrome
+        //check for substrings of length 2
+        for(int i=0;i<n-1;i++)
+        {
+            if(s[i]==s[i+1])
+            {
+                table[i][i+1]=1;
+                l=i;
+                maxlength=2;
+            }
+        }
+        
+        //check for substrings of length >2
+        //k is the length of substring whetehr 3 ,4,5..
+        for(int k=3;k<=n;k++)
+        {
+            for(int i=0;i<n-k+1;i++)
+            {
+                int end=i+k-1;//end index initialization
+                //check if substring from i to end substring plaindrome ornot
+                if(table[i+1][end-1]==1&&s[i]==s[end])
+                    table[i][end]=1;
+                 //Updating the maxLen
+                if (k > maxlength)
+                {
+                        l=i; 
+                        maxlength= k; 
+                   } 
+            }
+        } 
+    
+        return s.substr(l, maxlength);
+    }
