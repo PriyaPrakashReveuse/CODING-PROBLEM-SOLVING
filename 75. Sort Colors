@@ -1,0 +1,28 @@
+void sortColors(vector<int>& nums)
+    {
+        int n=nums.size();
+        if(n==1) 
+            return; 
+        int p=0,l=0,r=n-1;
+        while(l<=r)
+        {
+            if(nums[l]==0)
+            {
+                //keep swapping 0s
+                swap(nums[l],nums[p]);
+                l++;
+                p++;
+            }
+            else if(nums[l]==1)
+            {
+                //dont touch 1s just leave em at their places it will eventually get sorted
+                l++;
+            }
+            else
+            {
+                //if you see 2 just swap it with  the r and send it to the last
+                swap(nums[l],nums[r]);
+                r--;
+            }
+        }
+    }
