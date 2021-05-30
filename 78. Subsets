@@ -2,9 +2,12 @@ vector<vector<int>> subsets(vector<int>& nums)
     {
         vector<vector<int>> ans;
         ans.push_back({});
-        if (nums.empty()) return {{}};
         
-        for (int i: nums) {
+        if (nums.empty()) 
+        {return {{}};}
+        
+        for (int i: nums) 
+        {
             int size = ans.size();
             for (int j = 0; j < size; j++) {
                 vector <int> subset = ans[j];
