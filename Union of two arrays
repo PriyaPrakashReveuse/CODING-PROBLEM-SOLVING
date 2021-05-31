@@ -1,0 +1,26 @@
+int doUnion(int a[], int n, int b[], int m)  
+    {
+        int  ans[m+n],count=0;
+        for(int i=0;i<n;i++)
+        {
+            ans[i]=a[i];
+        }
+        
+        int j=0;
+        for(int i=n;i<n+m;i++)
+        {
+            ans[i]=b[j];
+            j++;
+        }
+        
+        sort(ans,ans+m+n);
+        
+        for(int i=0;i<m+n;i++)
+        {
+            if(ans[i]!=ans[i+1])
+            {
+                count++;
+            }
+        }
+        return count;
+    }
