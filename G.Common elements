@@ -1,0 +1,49 @@
+vector <int> commonElements (int a[], int b[], int c[], int n1, int n2, int n3)
+        {
+          int i=0,j=0,k=0;
+          vector<int> ans;
+          while(i<n1&&j<n2&&k<n3)
+          {
+              if(a[i]==b[j]&&b[j]==c[k])
+              {
+                  ans.push_back(a[i]);
+                  i++;
+                  j++;
+                  k++;
+              }
+              else if(a[i]<b[j])
+              {
+                  i++;
+              }
+              else if(b[j]<c[k])
+              {
+                  j++;
+              }
+              else
+              {
+                  k++;
+              }
+              
+              //but in case of -> 3333,3333,3333 output would be 3333 but we just wat a unique asnwer that is just one 3
+         
+              int ii=a[i-1];//store the first 3 
+              while(a[i]==ii)
+              {
+                  i++;//while the 3 is repeating we will keep skipping
+              }
+              int jj=b[j-1];//store the first 3 
+              while(b[j]==jj)
+              {
+                  j++;//while the 3 is repeating we will keep skipping
+              }
+              int kk=c[k-1];//store the first 3 
+              while(c[k]==kk)
+              {
+                  k++;//while the 3 is repeating we will keep skipping
+              }
+          }
+          if(ans.size()==0)
+              return {-1};
+          
+          return ans;
+        }
