@@ -1,0 +1,24 @@
+//90deg anti cockwise
+void rotate(vector<vector<int> >& matrix)
+{
+    int numrow=(int)matrix.size();
+    int numcol=(int)matrix[0].size();
+    
+    //column swapping or row reversal
+   for(int i=0;i<numrow;i++)
+   {
+       reverse(matrix[i].begin(),matrix[i].end());
+   }
+   
+   //transpose of the calculated matrix
+   for(int row=0;row<numrow;row++)
+   {
+       for(int col=0;col<numcol;col++)
+       {
+           if(row<col)
+           {
+               swap(matrix[row][col],matrix[col][row]);
+           }
+       }
+   }
+}
