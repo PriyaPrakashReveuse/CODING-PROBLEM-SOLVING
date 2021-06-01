@@ -1,0 +1,37 @@
+int findK(int matrix[MAX][MAX], int n, int m, int k)
+{
+       list<int>l;
+        int startr=0,endr=n-1;
+        int startc=0,endc=m-1;
+        
+        while(startr<=endr&&startc<=endc)
+        {
+            for(int i=startc;i<=endc;i++)
+            {
+                l.add(matrix[startr][i]);
+            }
+            startr++;
+            
+            for(int i=startr;i<=endr;i++)
+            {
+                l.add(matrix[i][endc]);
+            }
+            endc--;
+            
+            if(endr>=startr&&endc>=startc)
+            {
+            for(int i=endc;i>=startc;i--)
+            {
+                l.add(matrix[endr][i]);
+            }
+            endr--;
+                
+            for(int i=endr;i>=startr;i--)
+            {
+                l.add(matrix[i][startc]);
+            }
+            startc++;
+            }
+        }
+      return l.push_back(k-1);
+}
