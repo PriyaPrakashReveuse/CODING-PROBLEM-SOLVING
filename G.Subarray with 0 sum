@@ -1,0 +1,30 @@
+bool subArrayExists(int arr[], int n)
+    {
+        int sum=0;
+        unordered_map<int,int> m;
+        
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+arr[i];
+            
+            if(arr[i]==0)
+            {
+                return true;
+            }
+            if(sum==0)
+           { 
+               return true;
+               break;
+           }
+           if(m[sum]==1)
+           {
+               return true;
+               break;
+           }
+            else
+            {
+                m[sum]=1;
+            }
+        }
+        return false;
+    }
