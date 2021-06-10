@@ -1,11 +1,13 @@
 
 int setBits(int n) 
     {
-        int ans=0;
-        while(n>0)
+        int count= 0;
+        
+        while(n)
         {
-            n=n&(n-1);
-            ans++;
+		count=count+(n&1);
+		n=n>>1;
         }
-        return ans;
+        
+        return count;
     }
