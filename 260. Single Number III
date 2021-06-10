@@ -1,0 +1,36 @@
+vector<int> singleNumber(vector<int>& nums) 
+    {
+        int n=nums.size(),res = 0;
+        
+        for(int i=0;i<n;i++) 
+        {
+            res=res^nums[i];
+        }
+        
+        // find the postion where the first set bit occurs from the right
+        int temp=res;
+        int pos=0;
+        while((temp&1)==0)
+        {
+            pos++;
+            temp=temp>>1;
+        }
+        
+        //we get the first setbit position at pos
+        //now from the array list find th eposition which have setbit at pos
+        
+        int a = 0;
+        
+        for(int i=0;i<n;i++) 
+        {
+            if((nums[i] & (1<<pos))>0) 
+            {
+                a ^= nums[i];
+            }
+        }
+        
+        int b=res^a;
+        
+        return { min(a,b),max(a,b)};
+        
+    }
