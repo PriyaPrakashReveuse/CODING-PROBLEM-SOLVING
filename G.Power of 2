@@ -1,0 +1,27 @@
+bool isPowerofTwo(long long n)
+    {
+        if(n==0)
+        {
+            return false;
+        }
+        if(n==1)
+        {
+            return true;
+        }
+        if(n&1==1) //if odd
+        {
+            return false;
+        }
+        
+        int cnt=0;
+        while(n>0)
+        {
+            n=n&(n-1);
+            cnt++;
+        }
+        
+        //if(cnt==1)
+        //return true;
+        
+        return cnt==1;
+    }
