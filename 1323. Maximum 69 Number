@@ -6,7 +6,7 @@ int maximum69Number (int num)
             if(s[i]=='6')
             {
                 s[i]='9';
-                //just chnage once & return the number
+                //just change once & return the number
                 return stoi(s);
             }
         }
