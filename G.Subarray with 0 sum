@@ -16,6 +16,7 @@ bool subArrayExists(int arr[], int n)
                return true;
                break;
            }
+           
            if(m[sum]==1)
            {
                return true;
